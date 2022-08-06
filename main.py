@@ -1,27 +1,30 @@
-# import random
+import random
 
-# destinations = ["San Diego.", "Chicago.", "Stillwater.", "Eau Claire."]
-# restaurants = ["The Pub.", "The Grill.", "The Seashack.", "The Vegan."]
-# mode_of_transportations = ["Train.", "Airplane.", "Bicycle.", "Dogsled."]
-# entertainments = ["dancing.", "watch a Movie.", "roller skating.", "feeding pigeons."]
+destinations = ["San Diego.", "Chicago.", "Stillwater.", "Eau Claire."]
+restaurants = ["The Pub.", "The Grill.", "The Seashack.", "The Vegan."]
+mode_of_transportations = ["Train.", "Airplane.", "Bicycle.", "Dogsled."]
+entertainments = ["dancing.", "watch a Movie.", "roller skating.", "feeding pigeons."]
 
-# # destination 
-# def destination():
-#     is_satisfied = False
-#     while is_satisfied == False:
-#         is_satisfied = False
-#         rand_number = random.randrange(0,4)
-#         rand_output = (destinations[rand_number])
-#         print("Here is your random destination." , rand_output, "Does this work for you?")
-#         answer = input("yes/no ")
-#         if answer == "yes":
-#             print("Cool. Moving on.")
-#             break
-#         elif answer == "no":
-#             print("Let's try again.")
-#         else:
-#             print("Please enter yes or no.")
-# destination()
+# destination 
+def destination():
+    is_satisfied = False
+    while is_satisfied == False:
+        is_satisfied = False
+        rand_number = random.randrange(0,4)
+        rand_output = (destinations[rand_number])
+        print("Here is your random destination." , rand_output, "Does this work for you?")
+        answer = input("yes/no ")
+        if answer == "yes":
+            print("Cool. Moving on.")
+            break
+        elif answer == "no":
+            print("Let's try again.")
+        else:
+            print("Please enter yes or no.")
+        return rand_output
+destination()
+# print(returned rand_output)
+
 
 # # restaurant
 
@@ -80,11 +83,11 @@
 #             print("Please enter yes or no.")
 # entertainment()
 
-def generated_list():
-    trips = ["Destination:", "Transportation:", "Restaurant:", "Entertainment:"]
-    for item in trips:
-        print(item)
-generated_list()
+# def generated_list():
+#     trips = ["Destination:", "Transportation:", "Restaurant:", "Entertainment:"]
+#     for item in trips:
+#         print(item)
+# generated_list()
     
    
 
