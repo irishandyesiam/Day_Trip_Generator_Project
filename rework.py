@@ -8,7 +8,7 @@ entertainments = ["Dancing.", "Watch a movie.", "Roller skating.", "Feeding pige
 example_day = []
 
 # greeting
-print("Hello, here is your randomly generated day trip. Please review.")
+print("Hello, and welcome to the Day Trip Generator. Please see your list below.")
 
 # random generated day trip list
 
@@ -72,7 +72,7 @@ def no_loop():
         confirm_day_trip()
     else:
         print("I didn't understand your answer.")
-        confirm_day_trip()
+        
 
 # confirm trip
 
@@ -80,12 +80,12 @@ def confirm_day_trip():
     is_satisfied = False
     while is_satisfied == False:
         is_satisfied = False
-        print("Please confirm your day trip.")
+        print("Please review the list. See anything that you want to change?")
         answer = input("yes/no ")
-        if answer == "yes":
-            print("Cool. Enjoy your day.")
+        if answer == "no":
+            print("Cool. Enjoy your day, be safe and come on back for more suggestions.")
             return False
-        elif answer == "no":
+        elif answer == "yes":
             print("Alrighty then.")
             no_loop()
         else:
