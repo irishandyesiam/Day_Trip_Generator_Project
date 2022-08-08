@@ -13,7 +13,7 @@ print("Hello, here is your randomly generated day trip. Please review.")
 def destination():    
     rand_number = random.randrange(0,4)
     rand_out = (destinations[rand_number])
-    return rand_out
+    return rand_out # how do I return new value to function 'select trip feature'?
 example_day.append (destination())
 
 def restaurant():    
@@ -42,28 +42,55 @@ def generated_list():
         print(trips[item] + example_day[item])
 generated_list()
 
-
-
 # select trip feature
 def select_trip_feature():
+    is_satisfied = False
     print("Which feature do you want to try again?")
     answer = input("Destination, Restaurant, Transportation, or Entertainment.")
-    is_satisfied = False
     while is_satisfied == False: # after getting new random feature, how do I get out of loop?
         if answer == "Destination":
-            destination()
+            revised = destination()
+            example_day[0] = revised
+            generated_list()
+            confirm_day_trip()
         elif answer == "Restaurant":
-            restaurant()
+            revised = restaurant()
+            example_day[1] = revised
+            generated_list()
+            confirm_day_trip()
         elif answer == "Transportation":
-            mode_of_transportation()
+            revised = mode_of_transportation()
+            example_day[2] = revised
+            generated_list()
+            confirm_day_trip()
         elif answer == "Entertainment":
-            entertainment()
+            revised = entertainment()
+            example_day[3] = revised
+            generated_list()
+            confirm_day_trip()
         else:
             print("Please enter: Destination, Restaurant, Transportation, or Entertainment. ")
-select_trip_feature()
 
+# Function 1 - check for satisfiaction WHILE USER NOT SATISFIED, PROMPT FOR FEATURE TO RESELECT
+# Function 2 - prompting for feature, re-generating new feature, and going back to first function (NO LOOP IN THIS FUNCTION)
 
+# confirm trip
 
+def confirm_day_trip():
+    is_satisfied = False
+    while is_satisfied == False:
+        is_satisfied = False
+        print("Please confirm your day trip.")
+        answer = input("yes/no ")
+        if answer == "yes":
+            print("Cool. Enjoy your day.")
+            return False
+        elif answer == "no":
+            print("Alrighty then.")
+            select_trip_feature()
+        else:
+            print("Please enter yes or no.")
+confirm_day_trip()
 
 
 
