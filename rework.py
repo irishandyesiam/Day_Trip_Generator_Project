@@ -84,7 +84,7 @@ def confirm_day_trip():
         answer = input("yes/no ")
         if answer == "no":
             print("Cool. Enjoy your day, be safe and come on back for more suggestions.")
-            return False
+            is_satisfied = True
         elif answer == "yes":
             print("Alrighty then.")
             no_loop()
