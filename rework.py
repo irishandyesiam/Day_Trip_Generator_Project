@@ -9,7 +9,9 @@ example_day = []
 
 # greeting
 print("Hello, here is your randomly generated day trip. Please review.")
+
 # random generated day trip list
+
 def destination():    
     rand_number = random.randrange(0,4)
     rand_out = (destinations[rand_number])
@@ -43,6 +45,56 @@ def generated_list():
     return trips
 generated_list()
 
+# no_loop_revision
+
+def no_loop():
+    print("Which feature do you want to try again?")
+    answer = input("Destination, Restaurant, Transportation, or Entertainment.")
+    if answer == "Destination":
+        revised = destination()
+        example_day[0] = revised
+        generated_list()
+        confirm_day_trip()
+    elif answer == "Restaurant":
+        revised = restaurant()
+        example_day[1] = revised
+        generated_list()
+        confirm_day_trip()
+    elif answer == "Transportation":
+        revised = mode_of_transportation()
+        example_day[2] = revised
+        generated_list()
+        confirm_day_trip()
+    elif answer == "Entertainment":
+        revised = entertainment()
+        example_day[3] = revised
+        generated_list()
+        confirm_day_trip()
+    else:
+        print("I didn't understand your answer.")
+        confirm_day_trip()
+
+# confirm trip
+
+def confirm_day_trip():
+    is_satisfied = False
+    while is_satisfied == False:
+        is_satisfied = False
+        print("Please confirm your day trip.")
+        answer = input("yes/no ")
+        if answer == "yes":
+            print("Cool. Enjoy your day.")
+            return False
+        elif answer == "no":
+            print("Alrighty then.")
+            no_loop()
+        else:
+            print("Please enter yes or no.")
+confirm_day_trip()
+
+
+
+    
 # select trip feature
 # def select_trip_feature():
 #     is_satisfied = False
@@ -76,32 +128,6 @@ generated_list()
 # Function 1 - check for satisfiaction WHILE USER NOT SATISFIED, PROMPT FOR FEATURE TO RESELECT
 # Function 2 - prompting for feature, re-generating new feature, and going back to first function (NO LOOP IN THIS FUNCTION) **how?**
 
-# confirm trip
-
-# def confirm_day_trip():
-#     is_satisfied = False
-#     while is_satisfied == False:
-#         is_satisfied = False
-#         print("Please confirm your day trip.")
-#         answer = input("yes/no ")
-#         if answer == "yes":
-#             print("Cool. Enjoy your day.")
-#             return False
-#         elif answer == "no":
-#             print("Alrighty then.")
-#             select_trip_feature()
-#         else:
-#             print("Please enter yes or no.")
-# confirm_day_trip()
-
-
-def no_loop():
-    print("Which feature do you want to try again?")
-    print(example_day)
-    revised_feature = input()
-    example_day[revised_feature] 
-no_loop()
-    
 
 # rand_rest = (restaurants[rand_number])
     # rand_mot = (mode_of_transportations[rand_number])
