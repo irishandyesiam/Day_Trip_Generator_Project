@@ -92,6 +92,24 @@ def generated_list():
         print(trips[item] + selected_choice[item])
 generated_list()
 
+# select trip feature
+def select_trip_feature():
+    print("Which feature do you want to try again?")
+    answer = input("Destination, Restaurant, Transportation, or Entertainment.")
+    is_satisfied = False
+    while is_satisfied == False: # after getting new random feature, how do I get out of loop?
+        if answer == "Destination":
+            destination()
+        elif answer == "Restaurant":
+            restaurant()
+        elif answer == "Transportation":
+            mode_of_transportation()
+        elif answer == "Entertainment":
+            entertainment()
+        else:
+            print("Please enter: Destination, Restaurant, Transportation, or Entertainment. ")
+select_trip_feature()
+
 # confirm trip
 def confirm_day_trip():
     is_satisfied = False
@@ -103,14 +121,11 @@ def confirm_day_trip():
             print("Cool. Enjoy your day.")
             break
         elif answer == "no":
-            print("Alrighty then. Let's go another round.")
-            destination()
-            restaurant()
-            mode_of_transportation()
-            entertainment()
+            print("Alrighty then.")
+            select_trip_feature()
         else:
             print("Please enter yes or no.")
 confirm_day_trip()
-
+            
 
    
