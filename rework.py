@@ -42,14 +42,13 @@ def generated_list():
     sequence = range(length_of_list)
     for item in sequence:
         print(trips[item] + example_day[item])
-    return trips
 generated_list()
 
 # no_loop_revision
 
 def no_loop():
     print("Which feature do you want to try again?")
-    answer = input("Destination, Restaurant, Transportation, or Entertainment.")
+    answer = input("Destination, Restaurant, Transportation, or Entertainment. ")
     if answer == "Destination":
         revised = destination()
         example_day[0] = revised
@@ -73,7 +72,6 @@ def no_loop():
     else:
         print("I didn't understand your answer.")
         
-
 # confirm trip
 
 def confirm_day_trip():
@@ -83,16 +81,33 @@ def confirm_day_trip():
         print("Please review the list. See anything that you want to change?")
         answer = input("yes/no ")
         if answer == "no":
-            print("Cool. Enjoy your day, be safe and come on back for more suggestions.")
+            print("Cool. Here is your completed trip.") 
+            complete_trip()
             is_satisfied = True
         elif answer == "yes":
             print("Alrighty then.")
             no_loop()
         else:
             print("Please enter yes or no.")
+            generated_list()
 confirm_day_trip()
 
+# complete trip
 
+def complete_trip():
+    is_satisfied = True
+    while is_satisfied == True:
+        generated_list()
+        print("Please confirm one last time that this is your complete trip and you are satisfied with the results.")
+        answer = input("yes/no ")
+        if answer == "no":
+            print("Okay, let's do it again.")
+            no_loop()
+        elif answer == "yes":
+            print("Enjoy your day, be safe and come on back for more suggestions.")
+            is_satisfied = False
+        else:
+            print("Please enter yes or no.")
 
     
 # select trip feature
